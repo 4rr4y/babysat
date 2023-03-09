@@ -1,6 +1,15 @@
 # babySAT
 
-Baby Steps to a SAT Solver. This solver is designed to put in practice several interesting concepts I read about regarding practical [SAT solving](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) as a **small** program, without losing too much performance. Corresponding (excellent!) resources are left as comments in source for relevant sections.
+Baby Steps to a SAT Solver. This solver is designed to put in practice several interesting concepts I read about regarding practical [SAT solving](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) as a **small** program, without losing too much performance. Corresponding (excellent!) resources are left as comments in source for relevant sections. 
+
+A high level overview of techniques implemented for the underlying CDCL algorithm are as follows:
+* **Unit Propagation** - 2 Watch Literals (2-WL) data structure
+* **Clause Learning** - First unique implication point (1UIP), recursive clause minimization
+* **Clause Reduction** - Clause subsumption (Self-subsumption not implemented)
+* **Heuristics** - Learning Rate Branching (LRB), Literal Block Distance (LBD)
+* **Miscellaneous** - Luby restarts, "copy-from-back + subsequent delete" approach for element deletion from clause list / 2-WL data structure.
+
+Please feel free to create a GitHub issue if any problems are surfaced.
 
 ## Compilation and Execution
 
