@@ -1,4 +1,4 @@
-# babysat
+# babySAT
 
 Baby Steps to a SAT Solver. This solver is designed to put in practice several interesting concepts I read about regarding practical [SAT solving](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) as a **small** program, without losing too much performance. Corresponding (excellent!) resources are left as comments in source for relevant sections.
 
@@ -15,6 +15,13 @@ To execute the resulting program, pass a CNF File (DIMACS format) as the first a
 ```sh
 ./satsolver mycnf.cnf
 ```
+
+A sample execution of the babySAT is as follows:
+* Decisions made at each decision level are broken down
+* Reason clauses causing unit propagation are attached to relevant decisions.
+* Other information are available (e.g. reason clause's LBD, clause is Given[G] or Learned[L], etc.)
+
+![](sample_execution.png)
 
 CNF files used during development are [benchmark problems from SATLIB](https://www.cs.ubc.ca/~hoos/SATLIB/benchm.html).
 
