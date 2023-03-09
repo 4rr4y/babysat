@@ -20,4 +20,12 @@ CNF files used during development are [benchmark problems from SATLIB](https://w
 
 ## Sample Performance
 
-TODO: Plot graph
+The performance of the SAT solver against several benchmarks are shown below (execution on 2.3Ghz Intel Core i9 with 32GB RAM):
+
+* **UF/UUF** - Uniform Random 3-SAT Problem (A sample of 10 is taken, executed 3 times each). X-axis represents number of variables (# clauses approximately 4.3x # variables)
+
+![](performance_uf_uuf.png)
+
+* **Pigeonhole** - Placing n + 1 pigeon into n holes without 2 pigeons in the same hole (UNSAT). X-axis represents n.
+
+![](performance_pigeonhole.png)
