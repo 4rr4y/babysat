@@ -96,7 +96,7 @@ typedef struct _Decision {
     unsigned reasonClauseIndex; // Index of clause that induced this decision (e.g. due to unit prop)
 } Decision;
 
-#define INVALID_DECISION ((Decision) { INVALID_LIT, -1, INVALID_CLAUSE_INDEX })
+#define INVALID_DECISION ((Decision) { INVALID_LIT, 0, 0, INVALID_CLAUSE_INDEX })
 
 // Common structures used by all parts of the algorithm
 // Note: for STL vector, refrain from using pop_back() to achieve performance (time) improvement
