@@ -184,6 +184,7 @@ bool readDimacs(char* filename, Context* ctx) {
         clause->lastSATLit = INVALID_LIT;
         clause->WL[0] = INVALID_LIT;
         clause->WL[1] = INVALID_LIT;
+        clause->LBD = 0;
         int lit;
         while (true) {
             cnfFile >> lit;
@@ -196,7 +197,7 @@ bool readDimacs(char* filename, Context* ctx) {
             // Locate a watch literal candidate (possibly at random)
             do {
                 index = TERNARY(ENABLE_RANDOM, rand() % clause->lits.size(), j);
-            } while (clause->WL[index] != INVALID_LIT);
+            } while (j > 0 && clause->lits[index] != clause->WL[0]);
             // Make it one
             ctx->twoWL[clause->lits[index]].push_back(i);
             clause->WL[j] = clause->lits[index];
