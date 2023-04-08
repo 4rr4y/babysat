@@ -197,7 +197,7 @@ bool readDimacs(char* filename, Context* ctx) {
             // Locate a watch literal candidate (possibly at random)
             do {
                 index = TERNARY(ENABLE_RANDOM, rand() % clause->lits.size(), j);
-            } while (j > 0 && clause->lits[index] != clause->WL[0]);
+            } while (j > 0 && clause->lits[index] == clause->WL[0]);
             // Make it one
             ctx->twoWL[clause->lits[index]].push_back(i);
             clause->WL[j] = clause->lits[index];
